@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>Stock Market Sim</title>
+    <style type="text/css">
+    </style>
+    <script src="program.js"></script>
+    
+</head>
+
+<body>
+    <h1>Total Cash</h1>
+    <h2 id="money">$10000</h2>
+    <h2 id="chng"></h2>
+    <h2 id="prcntChng"></h2>
+    <table>
+        <tr>
+            <th>Ticker</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>GOOG</td>
+            <td id="GOOGPrice">0</td>
+            <td><button onclick='purchase("GOOG")'>Buy</button></td>
+        </tr>
+        <tr>
+            <td>MSFT</td>
+            <td id="MSFTPrice">0</td>
+            <td><button onclick='purchase("MSFT")'>Buy</button></td>
+        </tr>
+        <tr>
+            <td>AMZN</td>
+            <td id="AMZNPrice">0</td>
+            <td><button onclick='purchase("AMZN")'>Buy</button></td>
+        </tr>
+        <tr>
+            <td>BOBA</td>
+            <td id="BOBAPrice">0</td>
+            <td><button onclick='purchase("BOBA")'>Buy</button></td>
+        </tr>
+    </table>
+    <button onclick="marketChange()">Market Change</button>
+    <h2>Portfolio:</h2>
+    <table>
+        <tr>
+            <th>Ticker</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>GOOG</td>
+            <td id="GOOGQTY">0</td>
+            <td><button onclick='sell("GOOG")'>Sell</button></td>
+        </tr>
+        <tr>
+            <td>MSFT</td>
+            <td id="MSFTQTY">0</td>
+            <td><button onclick='sell("MSFT")'>Sell</button></td>
+        </tr>
+        <tr>
+            <td>AMZN</td>
+            <td id="AMZNQTY">0</td>
+            <td><button onclick='sell("AMZN")'>Sell</button></td>
+        </tr>
+        <tr>
+            <td>BOBA</td>
+            <td id="BOBAQTY">0</td>
+            <td><button onclick='sell("BOBA")'>Sell</button></td>
+        </tr>
+    </table>
+</body>
+<script>
+        marketChange();
+        //document.getElementById("money").innerHTML = money;
+        document.getElementById("GOOGPrice").innerHTML = stockMarketPrice["GOOG"];
+        document.getElementById("MSFTPrice").innerHTML = stockMarketPrice["MSFT"];
+        document.getElementById("AMZNPrice").innerHTML = stockMarketPrice["AMZN"];
+        document.getElementById("BOBAPrice").innerHTML = stockMarketPrice["BOBA"];
+        document.getElementById("GOOGQTY").innerHTML = stockMarketQty["GOOG"];
+        document.getElementById("MSFTQTY").innerHTML = stockMarketQty["MSFT"];
+        document.getElementById("AMZNQTY").innerHTML = stockMarketQty["AMZN"];
+        document.getElementById("BOBAQTY").innerHTML = stockMarketQty["BOBA"];
+    </script>
+</html>

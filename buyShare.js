@@ -1,26 +1,28 @@
-var money = 10000;
-var stockMarket = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
-console.log("GOOG: ", stockMarket["GOOG"]);
-console.log("GOOG: ", stockMarket["MSFT"]);
-console.log("GOOG: ", stockMarket["AMZN"]);
-console.log("GOOG: ", stockMarket["AMZN"]);
-
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-/*
+var money = 10000;
+var stockMarketPrice = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
+var stockMarketQty = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
 
-var stock1Price = getRndInteger(25, 35);
-var stock1Qty = 0;
+//randomize market prices
 
+stockMarketPrice["GOOG"] = getRndInteger(30, 50)
+stockMarketPrice["MSFT"] = getRndInteger(30, 50)
+stockMarketPrice["AMZN"] = getRndInteger(30, 50)
+stockMarketPrice["BOBA"] = getRndInteger(30, 50)
+
+//your stats
 console.log("You currently have $", money)
 console.log("Stock 1 currently trades at $",stock1Price)
 console.log("You currently have ",stock1Qty, " shares of stock #1")
 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+//market prices
+console.log("GOOG: ", stockMarketPrice["GOOG"]);
+console.log("MSFT: ", stockMarketPrice["MSFT"]);
+console.log("AMZN: ", stockMarketPrice["AMZN"]);
+console.log("BOBA: ", stockMarketPrice["BOBA"]);
 
 function purchase(stock){
 var purchaseQty = prompt("How many shares of", stock ," would you like to buy?", "0");
@@ -46,4 +48,4 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-*/
+

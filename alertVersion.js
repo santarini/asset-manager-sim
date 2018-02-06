@@ -9,9 +9,9 @@ function getRndInteger(min, max) {
 
 //randomize market prices
 function marketChange(){
-stockMarketPrice["GOOG"] = getRndInteger(1, 100);
-stockMarketPrice["MSFT"] = getRndInteger(1, 100);
-stockMarketPrice["AMZN"] = getRndInteger(1, 100);
+stockMarketPrice["GOOG"] = getRndInteger(200, 700);
+stockMarketPrice["MSFT"] = getRndInteger(50, 300);
+stockMarketPrice["AMZN"] = getRndInteger(300, 1500);
 stockMarketPrice["BOBA"] = getRndInteger(1, 100);
 document.getElementById("GOOGPrice").innerHTML = stockMarketPrice["GOOG"];
 document.getElementById("MSFTPrice").innerHTML = stockMarketPrice["MSFT"];

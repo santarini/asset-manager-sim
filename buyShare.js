@@ -12,6 +12,9 @@ stockMarketPrice["GOOG"] = getRndInteger(30, 50);
 stockMarketPrice["MSFT"] = getRndInteger(30, 50);
 stockMarketPrice["AMZN"] = getRndInteger(30, 50);
 stockMarketPrice["BOBA"] = getRndInteger(30, 50);
+}
+
+function viewMarket(){
 console.log("The current market prices are:");
 console.log("GOOG: ", stockMarketPrice["GOOG"]);
 console.log("MSFT: ", stockMarketPrice["MSFT"]);

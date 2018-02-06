@@ -1,5 +1,16 @@
 var money = 10000;
 var stockMarket = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
+console.log("GOOG: ", stockMarket["GOOG"]);
+console.log("GOOG: ", stockMarket["MSFT"]);
+console.log("GOOG: ", stockMarket["AMZN"]);
+console.log("GOOG: ", stockMarket["AMZN"]);
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+/*
+
 var stock1Price = getRndInteger(25, 35);
 var stock1Qty = 0;
 
@@ -22,3 +33,17 @@ console.log("You currently have $", money);
 console.log("You currently have ", purchaseQtyInt, " shares of", stock);
 }
 
+////this works
+
+var money = 10000;
+var stockMarket = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
+console.log("GOOG: ", stockMarket["GOOG"]);
+console.log("GOOG: ", stockMarket["MSFT"]);
+console.log("GOOG: ", stockMarket["AMZN"]);
+console.log("GOOG: ", stockMarket["AMZN"]);
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+*/

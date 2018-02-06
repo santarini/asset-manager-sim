@@ -8,15 +8,15 @@ var stockMarketQty = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
 
 //randomize market prices
 
-stockMarketPrice["GOOG"] = getRndInteger(30, 50)
-stockMarketPrice["MSFT"] = getRndInteger(30, 50)
-stockMarketPrice["AMZN"] = getRndInteger(30, 50)
-stockMarketPrice["BOBA"] = getRndInteger(30, 50)
+stockMarketPrice["GOOG"] = getRndInteger(30, 50);
+stockMarketPrice["MSFT"] = getRndInteger(30, 50);
+stockMarketPrice["AMZN"] = getRndInteger(30, 50);
+stockMarketPrice["BOBA"] = getRndInteger(30, 50);
 
 //list your current stats
-console.log("You currently have $", money)
-console.log("Stock 1 currently trades at $",stock1Price)
-console.log("You currently have ",stock1Qty, " shares of stock #1")
+console.log("You currently have $", money);
+console.log("Stock 1 currently trades at $",stock1Price);
+console.log("You currently have ",stock1Qty, " shares of stock #1");
 
 //list current market prices
 console.log("GOOG: ", stockMarketPrice["GOOG"]);
@@ -25,7 +25,10 @@ console.log("AMZN: ", stockMarketPrice["AMZN"]);
 console.log("BOBA: ", stockMarketPrice["BOBA"]);
 
 function purchase(stock){
-    console.log(stockMarketPrice.stock);
+    var purchaseQty = prompt("How many shares of stockMarketPrice[stock] would you like to buy?", "0");
+    var purchaseQtyInt = parseInt(purchaseQty);
+    console.log(stockMarketPrice[stock]);
+    return stockMarketPrice[stock]
 }
 
     

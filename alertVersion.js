@@ -20,17 +20,16 @@ document.getElementById("BOBAPrice").innerHTML = stockMarketPrice["BOBA"];
 }
 
 function purchase(stock){
-    
-    //dicitonary reference is wrong here, read soemthing about using a map instead, need to reference key not value
     var purchaseQty = prompt("How many shares of " + stock + " would you like to buy?", "0");
     var purchaseQtyInt = parseInt(purchaseQty);
-    
+    var totalTrans;
     if (money == 0||money < purchaseQtyInt * stockMarketPrice[stock] ){
         alert("You don't have that enough money for that transaction.");
     }else if (purchaseQtyInt > 0){
         stockMarketQty[stock] = stockMarketQty[stock] + purchaseQtyInt;
         document.getElementById(stock + "QTY").innerHTML = stockMarketQty[stock];
-        money = money - (purchaseQtyInt * stockMarketPrice[stock]);
+        totalTrans = sellQtyInt * stockMarketPrice[stock];
+        money = money - totalTrans;
         document.getElementById("money").innerHTML = money;
         alert("Purchased " + purchaseQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
         alert("You currently have $" + money);
@@ -42,18 +41,19 @@ function purchase(stock){
 }
 
 function sell(stock){
-    
-    //dicitonary reference is wrong here, read soemthing about using a map instead, need to reference key not value
     var sellQty = prompt("How many shares of " + stock + " would you like to sell?", "0");
     var sellQtyInt = parseInt(sellQty);
+    var totalTrans;
     if (stockMarketQty[stock] == 0||stockMarketQty[stock] < sellQtyInt){
         alert("You don't have that much " + stock + " to sell.");
     }else if (sellQtyInt > 0){
         stockMarketQty[stock] = stockMarketQty[stock] + sellQtyInt;
         document.getElementById(stock + "QTY").innerHTML = stockMarketQty[stock];
-        money = money + (sellQtyInt * stockMarketPrice[stock]);
+        totalTrans = sellQtyInt * stockMarketPrice[stock];
+        money = money + totalTrans;
         document.getElementById("money").innerHTML = money;
-        alert("Sold " + sellQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
+        
+        alert("Sold " + sellQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each. \n For a total of ")
         alert("You currently have $" + money);
     }else if (sellQtyInt < 0){
         alert("It doesn't work like that...");

@@ -12,8 +12,10 @@ function getRndInteger(min, max) {
 
 var purchaseQTY = prompt("How many shares would you like to buy?", "1");
 
-
+//this is concatenating for some reason
 stock1Qty = purchaseQTY + stock1Qty;
+
+
 money = money - (purchaseQTY * stock1Price)
 console.log("You currently have $", money)
-console.log("You currently have ",stock1Qty, " shares of stock #1")
+console.log("You currently have ", stock1Qty, " shares of stock #1")

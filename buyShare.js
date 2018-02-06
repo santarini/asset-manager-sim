@@ -37,13 +37,13 @@ console.log("BOBA: ", stockMarketPrice["BOBA"]);
 function purchase(stock){
     
     //dicitonary reference is wrong here, read soemthing about using a map instead, need to reference key not value
-    var purchaseQty = prompt("How many shares of " + "XXXX" + " would you like to buy?", "0");
+    var purchaseQty = prompt("How many shares of " + stock + " would you like to buy?", "0");
     var purchaseQtyInt = parseInt(purchaseQty);
     
     if (purchaseQtyInt > 0){
-        stockMarketQty[stock] = purchaseQTY;
-        money = money - (purchaseQTY * stockMarketPrice[stock]);
-        console.log("Purchased " + purchaseQTY +" share of XXXXX at $" + stockMarketPrice[stock] +" each.")
+        stockMarketQty[stock] = stockMarketQty[stock] + purchaseQtyInt;
+        money = money - (purchaseQtyInt * stockMarketPrice[stock]);
+        console.log("Purchased " + purchaseQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
         console.log("You currently have $", money);
     }else if (purchaseQtyInt < 0){
         alert("It doesn't work like that...");

@@ -30,8 +30,8 @@ function purchase(stock){
         document.getElementById(stock + "QTY").innerHTML = stockMarketQty[stock];
         totalTransaction = (purchaseQtyInt * stockMarketPrice[stock]);
         money = money - totalTransaction;
-        document.getElementById("money").innerHTML = money;
-        alert("Purchased " + purchaseQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
+        document.getElementById("money").innerHTML = "$ " + money;
+        alert("Purchased " + purchaseQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.\n\nFor a total of $" + totalTransaction)
         alert("You currently have $" + money);
     }else if (purchaseQtyInt < 0){
         alert("It doesn't work like that...");
@@ -47,12 +47,12 @@ function sell(stock){
     if (stockMarketQty[stock] == 0||stockMarketQty[stock] < sellQtyInt){
         alert("You don't have that much " + stock + " to sell.");
     }else if (sellQtyInt > 0){
-        stockMarketQty[stock] = stockMarketQty[stock] + sellQtyInt;
+        stockMarketQty[stock] = stockMarketQty[stock] - sellQtyInt;
         document.getElementById(stock + "QTY").innerHTML = stockMarketQty[stock];
         totalTransaction = (sellQtyInt * stockMarketPrice[stock]);
         money = money + totalTransaction;
-        document.getElementById("money").innerHTML = money;
-        alert("Sold " + sellQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each. \n For a total of ")
+        document.getElementById("money").innerHTML = "$ " + money;
+        alert("Sold " + sellQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.\n\nFor a total of $" + totalTransaction)
         alert("You currently have $" + money);
     }else if (sellQtyInt < 0){
         alert("It doesn't work like that...");

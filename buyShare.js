@@ -52,6 +52,25 @@ function purchase(stock){
     }
 }
 
+function sell(stock){
+    
+    //dicitonary reference is wrong here, read soemthing about using a map instead, need to reference key not value
+    var sellQty = prompt("How many shares of " + stock + " would you like to sell?", "0");
+    var sellQtyInt = parseInt(sellQty);
+    if (stockMarketQty[stock] == 0)||(stockMarketQty[stock] < sellQtyInt){
+        console.log("You don't have that much " + stock + " to sell.");
+    }else if (sellQtyInt > 0){
+        stockMarketQty[stock] = stockMarketQty[stock] - sellQtyInt;
+        money = money + (sellQtyInt * stockMarketPrice[stock]);
+        console.log("Sold " + sellQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
+        console.log("You currently have $", money);
+    }else if (sellQtyInt < 0){
+        alert("It doesn't work like that...");
+    }else{
+        alert("Quit wasting my time.");
+    }
+}
+
 //view your current holdings
 
 function viewPortfolio(){

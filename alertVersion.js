@@ -22,14 +22,14 @@ document.getElementById("BOBAPrice").innerHTML = stockMarketPrice["BOBA"];
 function purchase(stock){
     var purchaseQty = prompt("How many shares of " + stock + " would you like to buy?", "0");
     var purchaseQtyInt = parseInt(purchaseQty);
-    var totalTrans;
+    var totalTransaction;
     if (money == 0||money < purchaseQtyInt * stockMarketPrice[stock] ){
         alert("You don't have that enough money for that transaction.");
     }else if (purchaseQtyInt > 0){
         stockMarketQty[stock] = stockMarketQty[stock] + purchaseQtyInt;
         document.getElementById(stock + "QTY").innerHTML = stockMarketQty[stock];
-        totalTrans = sellQtyInt * stockMarketPrice[stock];
-        money = money - totalTrans;
+        totalTransaction = (purchaseQtyInt * stockMarketPrice[stock]);
+        money = money - totalTransaction;
         document.getElementById("money").innerHTML = money;
         alert("Purchased " + purchaseQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
         alert("You currently have $" + money);
@@ -43,16 +43,15 @@ function purchase(stock){
 function sell(stock){
     var sellQty = prompt("How many shares of " + stock + " would you like to sell?", "0");
     var sellQtyInt = parseInt(sellQty);
-    var totalTrans;
+    var totalTransaction;
     if (stockMarketQty[stock] == 0||stockMarketQty[stock] < sellQtyInt){
         alert("You don't have that much " + stock + " to sell.");
     }else if (sellQtyInt > 0){
         stockMarketQty[stock] = stockMarketQty[stock] + sellQtyInt;
         document.getElementById(stock + "QTY").innerHTML = stockMarketQty[stock];
-        totalTrans = sellQtyInt * stockMarketPrice[stock];
-        money = money + totalTrans;
+        totalTransaction = (sellQtyInt * stockMarketPrice[stock]);
+        money = money + totalTransaction;
         document.getElementById("money").innerHTML = money;
-        
         alert("Sold " + sellQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each. \n For a total of ")
         alert("You currently have $" + money);
     }else if (sellQtyInt < 0){

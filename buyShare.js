@@ -25,7 +25,11 @@ console.log("AMZN: ", stockMarketPrice["AMZN"]);
 console.log("BOBA: ", stockMarketPrice["BOBA"]);
 
 function purchase(stock){
-/*
+    console.log(stockMarketPrice.stock);
+}
+
+    
+    /*
 var purchaseQty = prompt("How many shares of stockMarketPrice[stock] would you like to buy?", "0");
 var purchaseQtyInt = parseInt(purchaseQty)
 stock1Qty = purchaseQTY + stock1Qty;
@@ -34,4 +38,4 @@ money = money - (purchaseQtyInt * stock1Price);
 console.log("You currently have $", money);
 console.log("You currently have ", purchaseQtyInt, " shares of", stock);
 */
-}
+

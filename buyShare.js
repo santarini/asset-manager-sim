@@ -8,10 +8,10 @@ var stockMarketQty = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
 
 //randomize market prices
 function marketChange(){
-stockMarketPrice["GOOG"] = getRndInteger(30, 50);
-stockMarketPrice["MSFT"] = getRndInteger(30, 50);
-stockMarketPrice["AMZN"] = getRndInteger(30, 50);
-stockMarketPrice["BOBA"] = getRndInteger(30, 50);
+stockMarketPrice["GOOG"] = getRndInteger(1, 100);
+stockMarketPrice["MSFT"] = getRndInteger(1, 100);
+stockMarketPrice["AMZN"] = getRndInteger(1, 100);
+stockMarketPrice["BOBA"] = getRndInteger(1, 100);
 }
 
 function viewMarket(){

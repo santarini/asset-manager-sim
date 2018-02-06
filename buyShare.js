@@ -40,7 +40,9 @@ function purchase(stock){
     var purchaseQty = prompt("How many shares of " + stock + " would you like to buy?", "0");
     var purchaseQtyInt = parseInt(purchaseQty);
     
-    if (purchaseQtyInt > 0){
+    if (moeny == 0||money < purchaseQtyInt * stockMarketPrice[stock] ){
+        console.log("You don't have that enough money for that transaction.");
+    }else if (purchaseQtyInt > 0){
         stockMarketQty[stock] = stockMarketQty[stock] + purchaseQtyInt;
         money = money - (purchaseQtyInt * stockMarketPrice[stock]);
         console.log("Purchased " + purchaseQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")

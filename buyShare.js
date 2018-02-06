@@ -25,7 +25,7 @@ console.log("AMZN: ", stockMarketPrice["AMZN"]);
 console.log("BOBA: ", stockMarketPrice["BOBA"]);
 
 function purchase(stock){
-    var purchaseQty = prompt("How many shares of stockMarketPrice[stock] would you like to buy?", "0");
+    var purchaseQty = prompt("How many shares of " + stockMarketPrice[stock] + " would you like to buy?", "0");
     var purchaseQtyInt = parseInt(purchaseQty);
     console.log(stockMarketPrice[stock]);
     return stockMarketPrice[stock]

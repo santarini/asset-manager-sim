@@ -57,7 +57,7 @@ function sell(stock){
     //dicitonary reference is wrong here, read soemthing about using a map instead, need to reference key not value
     var sellQty = prompt("How many shares of " + stock + " would you like to sell?", "0");
     var sellQtyInt = parseInt(sellQty);
-    if (stockMarketQty[stock] == 0)||(stockMarketQty[stock] < sellQtyInt){
+    if (stockMarketQty[stock] == 0||stockMarketQty[stock] < sellQtyInt){
         console.log("You don't have that much " + stock + " to sell.");
     }else if (sellQtyInt > 0){
         stockMarketQty[stock] = stockMarketQty[stock] - sellQtyInt;

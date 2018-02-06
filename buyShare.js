@@ -15,6 +15,5 @@ var purchaseQTY = prompt("How many shares would you like to buy?", "1");
 
 stock1Qty = purchaseQTY + stock1Qty;
 money = money - (purchaseQTY * stock1Price)
-console.log(stock1Qty)
-
-
+console.log("You currently have $", money)
+console.log("You currently have ",stock1Qty, " shares of stock #1")

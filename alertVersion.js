@@ -1,10 +1,11 @@
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
 var money = 10000;
 var stockMarketPrice = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
 var stockMarketQty = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
+
+//creates a random int
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 //randomize market prices
 function marketChange(){
@@ -12,27 +13,11 @@ stockMarketPrice["GOOG"] = getRndInteger(1, 100);
 stockMarketPrice["MSFT"] = getRndInteger(1, 100);
 stockMarketPrice["AMZN"] = getRndInteger(1, 100);
 stockMarketPrice["BOBA"] = getRndInteger(1, 100);
+document.getElementById("GOOGPrice").innerHTML = stockMarketPrice["GOOG"];
+document.getElementById("MSFTPrice").innerHTML = stockMarketPrice["MSFT"];
+document.getElementById("AMZNPrice").innerHTML = stockMarketPrice["AMZN"];
+document.getElementById("BOBAPrice").innerHTML = stockMarketPrice["BOBA"];
 }
-
-function viewMarket(){
-console.log("The current market prices are:");
-console.log("GOOG: ", stockMarketPrice["GOOG"]);
-console.log("MSFT: ", stockMarketPrice["MSFT"]);
-console.log("AMZN: ", stockMarketPrice["AMZN"]);
-console.log("BOBA: ", stockMarketPrice["BOBA"]);
-}
-
-marketChange()
-
-//list your current stats
-console.log("You currently have $", money);
-
-//list current market prices
-console.log("The current market prices are:");
-console.log("GOOG: ", stockMarketPrice["GOOG"]);
-console.log("MSFT: ", stockMarketPrice["MSFT"]);
-console.log("AMZN: ", stockMarketPrice["AMZN"]);
-console.log("BOBA: ", stockMarketPrice["BOBA"]);
 
 function purchase(stock){
     
@@ -40,13 +25,15 @@ function purchase(stock){
     var purchaseQty = prompt("How many shares of " + stock + " would you like to buy?", "0");
     var purchaseQtyInt = parseInt(purchaseQty);
     
-    if (moeny == 0||money < purchaseQtyInt * stockMarketPrice[stock] ){
-        console.log("You don't have that enough money for that transaction.");
+    if (money == 0||money < purchaseQtyInt * stockMarketPrice[stock] ){
+        alert("You don't have that enough money for that transaction.");
     }else if (purchaseQtyInt > 0){
         stockMarketQty[stock] = stockMarketQty[stock] + purchaseQtyInt;
+        document.getElementById(stock + "QTY").innerHTML = stockMarketQty[stock];
         money = money - (purchaseQtyInt * stockMarketPrice[stock]);
-        console.log("Purchased " + purchaseQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
-        console.log("You currently have $", money);
+        document.getElementById("money").innerHTML = money;
+        alert("Purchased " + purchaseQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
+        alert("You currently have $" + money);
     }else if (purchaseQtyInt < 0){
         alert("It doesn't work like that...");
     }else{
@@ -60,26 +47,17 @@ function sell(stock){
     var sellQty = prompt("How many shares of " + stock + " would you like to sell?", "0");
     var sellQtyInt = parseInt(sellQty);
     if (stockMarketQty[stock] == 0||stockMarketQty[stock] < sellQtyInt){
-        console.log("You don't have that much " + stock + " to sell.");
+        alert("You don't have that much " + stock + " to sell.");
     }else if (sellQtyInt > 0){
-        stockMarketQty[stock] = stockMarketQty[stock] - sellQtyInt;
+        stockMarketQty[stock] = stockMarketQty[stock] + sellQtyInt;
+        document.getElementById(stock + "QTY").innerHTML = stockMarketQty[stock];
         money = money + (sellQtyInt * stockMarketPrice[stock]);
-        console.log("Sold " + sellQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
-        console.log("You currently have $", money);
+        document.getElementById("money").innerHTML = money;
+        alert("Sold " + sellQtyInt +" share of " + stock + " at $" + stockMarketPrice[stock] +" each.")
+        alert("You currently have $" + money);
     }else if (sellQtyInt < 0){
         alert("It doesn't work like that...");
     }else{
         alert("Quit wasting my time.");
     }
-}
-
-//view your current holdings
-
-function viewPortfolio(){
-   //list current market prices
-console.log("Your current holdings are:");
-console.log("GOOG: ", stockMarketQty["GOOG"]);
-console.log("MSFT: ", stockMarketQty["MSFT"]);
-console.log("AMZN: ", stockMarketQty["AMZN"]);
-console.log("BOBA: ", stockMarketQty["BOBA"]);
 }

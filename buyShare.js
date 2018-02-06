@@ -1,5 +1,5 @@
 var money = 10000;
-var stock1 = "GOOG";
+var stockMarket = {GOOG:0, MSFT:0, AMZN:0, BOBA:0};
 var stock1Price = getRndInteger(25, 35);
 var stock1Qty = 0;
 
@@ -17,8 +17,8 @@ var purchaseQtyInt = parseInt(purchaseQty)
 //this is concatenating for some reason
 stock1Qty = purchaseQTY + stock1Qty;
     
-money = money - (purchaseQtyInt * stock1Price)
-console.log("You currently have $", money)
-console.log("You currently have ", purchaseQtyInt, " shares of", stock)  
+money = money - (purchaseQtyInt * stock1Price);
+console.log("You currently have $", money);
+console.log("You currently have ", purchaseQtyInt, " shares of", stock);
 }
 

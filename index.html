@@ -7,15 +7,19 @@
     <title>Stock Market Sim</title>
     <style type="text/css">
     </style>
-    <script src="program.js"></script>
+    <script src="alertVersion.js"></script>
     
 </head>
 
 <body>
+    <h1>Total Asset Value</h1>
+    <h2 id="totalAssetValue"></h2>
+    <h2 id="totalAssetValueChng"></h2>
+    <h2 id="totalAssetValuePrcntChng"></h2>
     <h1>Total Cash</h1>
-    <h2 id="money">$10000</h2>
-    <h2 id="chng"></h2>
-    <h2 id="prcntChng"></h2>
+    <h2 id="cash">$10000</h2>
+    <h2 id="cashChng"></h2>
+    <h2 id="cashPrcntChng"></h2>
     <table>
         <tr>
             <th>Ticker</th>
@@ -43,37 +47,60 @@
         </tr>
     </table>
     <button onclick="marketChange()">Market Change</button>
-    <h2>Portfolio:</h2>
+    <h1>Portfolio</h1>
+    <h2 id="portfolio"></h2>
+    <h2 id="portfolioChng"></h2>
+    <h2 id="portfolioPrcntChng"></h2>
     <table>
         <tr>
             <th>Ticker</th>
             <th>Quantity</th>
+            <th>Cost</th>
+            <th>Value</th>
+            <th>$ Change</th>
+            <th>% Change</th>
         </tr>
         <tr>
             <td>GOOG</td>
             <td id="GOOGQTY">0</td>
+            <td id="GOOGCost">0</td>
+            <td id="GOOGValue">0</td>
+            <td id="GOOGChng">0</td>
+            <td id="GOOGPrcntChng">0</td>
             <td><button onclick='sell("GOOG")'>Sell</button></td>
         </tr>
         <tr>
             <td>MSFT</td>
             <td id="MSFTQTY">0</td>
+            <td id="MSFTCost">0</td>
+            <td id="MSFTValue">0</td>
+            <td id="MSFTChng">0</td>
+            <td id="MSFTPrcntChng">0</td>
             <td><button onclick='sell("MSFT")'>Sell</button></td>
         </tr>
         <tr>
             <td>AMZN</td>
             <td id="AMZNQTY">0</td>
+            <td id="AMZNCost">0</td>
+            <td id="AMZNValue">0</td>
+            <td id="AMZNChng">0</td>
+            <td id="AMZNPrcntChng">0</td>
             <td><button onclick='sell("AMZN")'>Sell</button></td>
         </tr>
         <tr>
             <td>BOBA</td>
             <td id="BOBAQTY">0</td>
+            <td id="BOBACost">0</td>
+            <td id="BOBAValue">0</td>
+            <td id="BOBAChng">0</td>
+            <td id="BOBAPrcntChng">0</td>
             <td><button onclick='sell("BOBA")'>Sell</button></td>
         </tr>
     </table>
 </body>
 <script>
         marketChange();
-        //document.getElementById("money").innerHTML = money;
+        updateTotalAssetValue()
         document.getElementById("GOOGPrice").innerHTML = stockMarketPrice["GOOG"];
         document.getElementById("MSFTPrice").innerHTML = stockMarketPrice["MSFT"];
         document.getElementById("AMZNPrice").innerHTML = stockMarketPrice["AMZN"];
